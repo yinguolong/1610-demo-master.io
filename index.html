@@ -19,10 +19,48 @@
     border-radius: 5px;
     box-shadow: 0px 0xp 3px 3px yellow;
   }
+  .black{
+    background-color: #000;
+  }
   </style>
 </head>
 <body>
 <div class="div"></div>
-<button>确定</button>
+<button class="btn">确定</button>
+<script type="text/javascript">
+function C(cls){
+  return document.getElementsByClassName(cls);
+}
+function addClass(element,name){
+      if(element.className == ""){
+        element.className = name;
+      }else{
+        var oldClass = element.className;
+        var regexp = new RegExp(name);
+        if(!regexp.test(oldClass)){
+        element.className = element.className+" "+name;
+        }
+      }
+
+    }
+function removeClass(element,name){
+      if(element.className == name){
+        element.className = "";
+      }else{
+        var oldClass = element.className;
+        var arr = oldClass.split(" ");
+        var newArr=arr.filter(function(num){
+          return num != name;
+        });
+        var newClass=newArr.join(" ");
+        element.className = newClass;
+
+      }
+    }
+  var a = C("div")[0];
+  C("btn")[0].onclick  = function(){
+    addClass(a,"black");
+  }
+</script>
 </body>
 </html>
