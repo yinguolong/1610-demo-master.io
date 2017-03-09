@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="div"></div>
+  <script type="text/javascript">
+    // let res = {
+    //   a : 1,
+    //   b : 2,
+    //   c : 4
+    // }
+    // let (b,c) = res;
+    // console.log(b+c);
+    // let [a,b,c,d] = "long";
+    // console.log(a+"\n"+b+"\n"+c+"\n"+d)
+    // var a = (name,age) => {
+    //   console.log("www");
+    //   alert("qqq");
+    //   ({name:"name",age:7})
+    // } ;
+    // console.log(a());
+    // function ww(a = 1,b = 2){
+    //   return a*b
+    // }
+    // console.log(ww(9,9));
+    // let age = 100;
+    // let name = "long";
+    // console.log(`姓名是${name}的年龄是${age}岁`)
+    // function long(a,...rest){
+    //   console.log(a);
+    //   console.log(rest)
+    // }
+    // console.log(long(1,2,3,4,5,6))
+    // function add(...x) {
+    //   return x.reduce((m,n) => m+n);
+    // }
+    // console.log(add(456,456,7545,6789,986,312,45,607,43))
+    // var people = ["yin","guo","long"]
+    // function say(people1,people2,people3) {
+    //   console.log(`hellow ${people1}${people2}${people3}`)
+    // }
+    // // say(...people)
+    // let arr = [19,23,60]
+    // // let newArr =arr.map(function(currentValue,index,array){
+    // //   return currentValue+14
+    // // })
+    // // console.log(newArr);
+    // var results = arr.filter(item => item > 30)
+    // console.log(results)
+
+
+
+
+
+    //构造函数继承问题
+    // function point(x,y){
+    //   this.x = x;
+    //   this.y = y;
+    // }
+    // point.prototype.toString = function (){
+    //   return `$(this.x),$(this.y)`;
+    // }
+    // function hellow(){
+    //   this.toString = function(){
+    //     return "hellow word"
+    //   }
+    // }
+    // hellow.prototype =new point(8,9);
+    // var p = new hellow(8,9)
+    // console.log (p.x)
+    // console.log (p.y)
+    // console.log (p.toString())
+
+
+
+
+    //ES6构造函数写法
+  //   class point {
+  //     constructor(x,y){    //---constructor为构造的意思
+  //       this.x = x;
+  //       this.y = y;
+  //     }
+  //     toString() {        //---类里面只能写方法，之间不能有逗号；
+  //       return this.x;
+  //     }
+  //   }
+  //   class hellow extends point{    //---extend是继承的意思;
+  //     constructor(a,b){
+  //       super();                   //---super是添加新属性,并且必须写在最上面;
+  //       this.a = a;
+  //       this.b = b;
+  //     }
+  //     say(){
+  //       return "hellow word";
+  //     }
+  //   }
+  //  var p = new point(9,2);
+  //  var l = new hellow(1,2);
+  //  console.log(l.say());
+  //  console.log(p.x,p.y);
+  //  console.log(p.toString())
+
+
+//实例
+  // class Father{
+  //   render(){
+  //     throw new Error("大撒bi")
+  //   }
+  //   _render(){
+  //     return(`
+  //       <ul>
+  //         ${this.render()}
+  //       </ul>
+  //     `)
+  //   }
+  // }
+  // class Son extends Father{
+  //   render(){
+  //     return(`
+  //       <li>1</li>
+  //       <li>2</li>
+  //       <li>3</li>
+  //       <li>4</li>
+  //       <li>5</li>
+  //     `)
+  //   }
+  // }
+  // document.getElementById("div").innerHTML = new Son()._render();
+
+
+
+
+
+
+  //导出
+  let a = 10;
+  let b = 32;
+  function ww() {
+    return "hellow word"
+  }
+  export {a,b,ww};           //---export 命名导出
+  //导入
+  import {a,b,ww} from "js文件路径";    //---import 导入
+
+
+  //默认导出
+  export default a       //---export default 默认导出
+  //默认导入
+  import www from "js文件路径"    //--- www为任意名字
+  </script>
+</body>
+</html>

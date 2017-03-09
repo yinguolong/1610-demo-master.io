@@ -7,11 +7,15 @@
   <title>Document</title>
   <style>
   .div{
+    border-radius: 5px;
     width: 100px;
     height: 100px;
     background-color: red;
+    margin: 0 auto;
   }
   button{
+    margin-top: 10px;
+    margin-left: 475px;
     width: 60px;
     height: 30px;
     background-color: blue;
@@ -57,10 +61,27 @@ function removeClass(element,name){
 
       }
     }
+  var c = 0;
   var a = C("div")[0];
   C("btn")[0].onclick  = function(){
-    addClass(a,"black");
+    if(c == 0){
+      addClass(a,"black");
+      c=1;
+    }else{
+      removeClass(a,"black");
+      c=0;
+    }
   }
+  a.onmouseenter  = function(){
+    addClass(this,"black");
+  }
+  a.onmouseleave  = function(){
+    removeClass(this,"black");
+  }
+  for (let i = 0; i < 9; i++) {
+    console.log(i);
+  }
+  console.log(i)
 </script>
 </body>
 </html>
